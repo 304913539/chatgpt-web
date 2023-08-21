@@ -15,6 +15,8 @@ const temperature = ref(settingStore.temperature ?? 0.5)
 
 const top_p = ref(settingStore.top_p ?? 1)
 
+const token = ref(settingStore.token ?? '')
+
 function updateSettings(options: Partial<SettingsState>) {
   settingStore.updateSetting(options)
   ms.success(t('common.success'))
@@ -56,6 +58,15 @@ function handleReset() {
         </div>
         <span>{{ top_p }}</span>
         <NButton size="tiny" text type="primary" @click="updateSettings({ top_p })">
+          {{ $t('common.save') }}
+        </NButton>
+      </div>
+      <div class="flex items-center space-x-4">
+        <span class="flex-shrink-0 w-[120px]">{{ $t('setting.token') }}</span>
+        <div class="flex-1">
+          <NInput v-model:value="token" type="textarea" :autosize="{ minRows: 1, maxRows: 4 }" />
+        </div>
+        <NButton size="tiny" text type="primary" @click="updateSettings({ token })">
           {{ $t('common.save') }}
         </NButton>
       </div>

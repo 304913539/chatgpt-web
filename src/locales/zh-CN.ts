@@ -26,7 +26,7 @@ export default {
     failed: '操作失败',
     verify: '验证',
     unauthorizedTips: '未经授权，请先进行验证。',
-		stopResponding: '停止响应',
+    stopResponding: '停止响应',
   },
   chat: {
     newChatButton: '新建聊天',
@@ -62,6 +62,7 @@ export default {
     role: '角色设定',
     temperature: 'Temperature',
     top_p: 'Top_p',
+    token: 'token',
     resetUserInfo: '重置用户信息',
     chatHistory: '聊天记录',
     theme: '主题',
